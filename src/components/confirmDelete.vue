@@ -27,7 +27,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
 
 .overlay{
   position: absolute;
@@ -101,7 +100,6 @@ export default {
 
    .confirmText{
     font-size:16px;
-    font-family: 'Josefin Sans', sans-serif;
     margin-top:20px;
    }
 }

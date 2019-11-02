@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-  tasks : {waiting:[{id:0,name:"Wykonać planning board",type:"feature"},{id:1,name:"Zrób coś",type:"default"},{id:2,name:"Zrób ",type:"bugfix"}],inProgress:[{id:3, name:"Wykonać planning boarder",type:"feature"}],complete:[]},
+  tasks : {waiting:[{id:0,name:"Wykonać planning board",type:"feature"},{id:1,name:"Przerwa na kawę",type:"default"},{id:2,name:"Popraw błędy",type:"bugfix"}],inProgress:[{id:3, name:"Wykonać planning boarder",type:"feature"}],complete:[{id:4, name:"Wykonać planning boarder",type:"feature"}]},
   },
   mutations: {
   // update tasks when changed

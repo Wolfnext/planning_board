@@ -5,7 +5,7 @@
       <input @keyup.enter="confirmFunction(data,newTask)"  placeholder="Text" v-model="newTask.name" type="text" >
       <div v-if="errorMessageInput" class="error-messages">{{errorMessageInput}}</div>
       <select @keyup.enter="confirmFunction(data,newTask)"  v-model="newTask.type">
-         <option value="" disabled selected>Select type</option>
+         <option disabled selected>Select type</option>
         <option v-for="(name,id) in typeArray" :key="id" :value="name" >{{name}}</option>
       </select>
       <div v-if="errorMessageSelect" class="error-messages">{{errorMessageSelect}}</div>
@@ -57,8 +57,8 @@ export default {
         if(newItem.name !=null && newItem.type != null){
        this.addTaskFunction(newItem)
       } else{
-        if(newItem.name == null) this.errorMessageInput = "Please enter the text."
-        if(newItem.type == null) this.errorMessageSelect = "Please select the type."
+        if(newItem.name == null || newItem.name == "") this.errorMessageInput = "Please enter the text."
+        if(newItem.type == null || newItem.name == "") this.errorMessageSelect = "Please select the type."
       }
       }
   },

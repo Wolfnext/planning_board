@@ -6,7 +6,7 @@
       <!-- left column - waiting -->
     <div class="leftSide">
       <header>Waiting</header>
-      <draggable @start="deleteItemVisible = true;" v-on:touchstart.native="startTouch" v-on:touchend.native="endTouch"  :move="endTouch" element="div" v-model='tasks.waiting' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
+      <draggable class="placeToAddItem" @start="deleteItemVisible = true;" v-on:touchstart.native="startTouch" v-on:touchend.native="endTouch"  :move="endTouch" element="div" v-model='tasks.waiting' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
        <div v-for="element in tasks.waiting" :key="element.id" class="item">
         <taskComponent :editTask="dialogAddEditVisible" :data="element" />
     </div>
@@ -14,7 +14,7 @@
     <!-- center column - inProgress -->
     <div class="center">
        <header>In progress</header>
-        <draggable @start="()=>{deleteItemVisible = true;}"  v-on:touchstart.native="startTouch" v-on:touchend.native="endTouch"  :move="endTouch"  element="div" v-model='tasks.inProgress' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
+        <draggable class="placeToAddItem" @start="()=>{deleteItemVisible = true;}"  v-on:touchstart.native="startTouch" v-on:touchend.native="endTouch"  :move="endTouch"  element="div" v-model='tasks.inProgress' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
        <div v-for="element in tasks.inProgress" :key="element.id" class="item">
         <taskComponent  :editTask="dialogAddEditVisible" :data="element" />
     </div>
@@ -23,7 +23,7 @@
      <!-- right column - complete -->
     <div class="rightSide">
         <header>Complete</header>
-        <draggable @start="()=>{deleteItemVisible = true;}"  v-on:touchstart.native="startTouch" v-on:touchend.native=endTouch  :move="endTouch" element="div"  v-model='tasks.complete' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
+        <draggable class="placeToAddItem" @start="()=>{deleteItemVisible = true;}"  v-on:touchstart.native="startTouch" v-on:touchend.native=endTouch  :move="endTouch" element="div"  v-model='tasks.complete' @end="handleDrop" :group="{ name:'tasks', pull: cloneIfItemMovedForDeletion}">
       <div v-for="element in tasks.complete" :key="element.id" class="item">
         <taskComponent  :editTask="dialogAddEditVisible" :data="element" />
     </div>
@@ -299,6 +299,11 @@ $toolbar__color:rgba(255,255,255,.1);
     &:hover {
       box-shadow: 2px 2px 10px #999;
     }
+}
+
+.placeToAddItem{
+  width:100%;
+  height:30vh;
 }
 
 

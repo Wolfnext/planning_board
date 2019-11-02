@@ -1,4 +1,11 @@
-# planningboard
+# Planning Board (VueJs + Vuex)
+Aplikacja stworzona na potrzeby rekrutacji.
+
+#### Dodawanie zadań poprzez naciśnięcie przycisku z "+" i wpisanie odpowiedznich danych
+
+#### Edycja zadania poprzez naciśnięcie ikonki "długopisa" lub dla urządzeń mobilnych przytrzymanie danego zadania
+
+#### Usunięcie zadania poprzez przerzucenie danego komponentu do ikonki kosza na dole strony
 
 ## Project setup
 ```
